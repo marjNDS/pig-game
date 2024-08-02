@@ -119,18 +119,23 @@ class Pig {
     }
   }
 
+  toggleButtons(){
+    if(this.btnRoll){
+      this.btnRoll.disabled == true? false : true;
+    }
+
+    if(this.btnHold){
+      this.btnHold.disabled == true ? false : true;
+    }
+
+  }
+
   finishGame() {
 
     this.players[this.turnPlayer].playerEl.classList.remove('player--active');
     this.players[this.turnPlayer].playerEl.classList.add('player--winner');
 
-    if (this.btnRoll) {
-      this.btnRoll.disabled = true;
-    }
-  
-    if (this.btnHold) {
-      this.btnHold.disabled = true;
-    }
+    this.toggleButtons();
 
   }
 
@@ -138,13 +143,7 @@ class Pig {
     this.players[this.turnPlayer].playerEl.classList.remove('player--winner');
     
     this.init();
-    if (this.btnRoll) {
-      this.btnRoll.disabled = false;
-    }
-  
-    if (this.btnHold) {
-      this.btnHold.disabled = false;
-    }
+    this.toggleButtons; 
 
   }
   
