@@ -143,7 +143,7 @@ class Pig {
     this.players[this.turnPlayer].playerEl.classList.remove('player--winner');
     
     this.init();
-    this.toggleButtons; 
+    this.toggleButtons(); 
 
   }
   
